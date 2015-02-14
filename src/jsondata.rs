@@ -1,14 +1,10 @@
 use std::collections::hash_map::HashMap;
 
-pub type JSONArray = Vec<JSONVal>;
-
-pub type JSONObject = HashMap<String, JSONVal>;
-
 pub enum JSONVal {
-    Array(JSONArray),
-    Object(JSONObject),
-    Int(i64),
-    Float(f64),
+    Array(Vec<JSONVal>),
+    Object(HashMap<String, JSONVal>),
+    Number(f64),
     StringVal(String),
-    Bool(bool)
+    Bool(bool),
+    Null
 }
